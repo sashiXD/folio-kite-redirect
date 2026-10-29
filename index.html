@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'sha256-UzMYMjk8+lCAT11uZL8T9XxriSXeJvTDzoH9cxbOZNI='; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="no-referrer">
+  <title>Open Folio</title>
+</head>
+<body>
+  <p>Return to Folio to finish connecting Kite.</p>
+  <p><a id="open-folio" href="foliopilot://kite-callback">Open Folio</a></p>
+  <script>
+function buildFolioUrl(search) {
+  return "foliopilot://kite-callback" + search;
+}
+var folioUrl = buildFolioUrl(window.location.search);
+document.getElementById("open-folio").href = folioUrl;
+window.location.replace(folioUrl);
+  </script>
+</body>
+</html>
